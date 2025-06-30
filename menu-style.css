@@ -1,0 +1,190 @@
+/* --- Variables y Estilos Globales para el Menú --- */
+:root {
+    --vermelho: #B33939; /* Un rojo ligeramente más moderno */
+    --laranja: #E89B4D;
+    --cinza-escuro: #2d3436;
+    --cinza: #636e72;
+    --cinza-claro: #b2bec3;
+    --fundo-pagina: #f5f6fa;
+    --branco: #ffffff;
+    --sombra: 0 8px 30px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cinza);
+    background-color: var(--fundo-pagina);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* --- Botón de Volver (Nuevo) --- */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--vermelho);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+}
+.back-button:hover {
+    color: var(--laranja);
+}
+
+
+/* --- Cabecera del Menú (Optimizada) --- */
+.menu-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+.menu-header .header-logo {
+    height: 60px;
+}
+
+.menu-header h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--laranja);
+}
+
+.menu-header h1 span {
+    color: var(--cinza-escuro);
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* --- Estilos de Categorías (Móvil primero) --- */
+.menu-category {
+    margin-top: 3rem;
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: 16px; /* Bordes más redondeados */
+    box-shadow: var(--sombra);
+    border: 1px solid #dfe6e9; /* Borde sutil */
+}
+
+.menu-category-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: var(--vermelho);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--laranja);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex; /* Para alinear el icono */
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+/* NUEVO: Estilo para los iconos de categoría */
+.category-icon {
+    height: 28px; /* Tamaño del icono */
+    opacity: 0.8;
+}
+
+
+/* --- Grid de Items (Móvil primero) --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    border-bottom: 1px solid #dfe6e9; /* Borde sólido y más claro */
+    transition: background-color 0.3s ease;
+    border-radius: 8px; /* Bordes redondeados para el hover */
+}
+
+/* NUEVO: Efecto hover para los items */
+.menu-item:hover {
+    background-color: #f5f6fa;
+}
+
+.menu-category .menu-grid .menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-details {
+    padding-right: 1rem;
+}
+
+.item-name {
+    display: block;
+    font-weight: 600;
+    color: var(--cinza-escuro); /* Texto más oscuro para mejor contraste */
+}
+
+.item-description {
+    display: block;
+    font-size: 0.9em;
+    color: var(--cinza); /* Un gris menos claro que antes */
+    font-style: italic;
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--vermelho); /* Precio resaltado en rojo */
+    white-space: nowrap;
+}
+
+.menu-footer-note {
+    text-align: center;
+    margin-top: 3rem;
+    font-style: italic;
+    color: var(--cinza-claro);
+}
+
+/* --- Adaptación para Escritorio (min-width: 768px) --- */
+@media (min-width: 768px) {
+    .container {
+        padding: 4rem 2rem;
+    }
+
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+    .menu-header h1 span {
+        font-size: 1.5rem;
+    }
+
+    .menu-category {
+        padding: 2.5rem;
+    }
+
+    .menu-category-title {
+        font-size: 2rem;
+        justify-content: flex-start; /* Alinear a la izquierda en escritorio */
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 3rem;
+    }
+}
